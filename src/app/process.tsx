@@ -66,7 +66,9 @@ type copyProps = {
 
 function CopyButton({ handler, buttonText }: copyProps) {
     return (
-        <button onClick={handler} className="rounded-full p-3 border">
+        <button
+          onClick={handler}
+          className="rounded-full p-3 bg-cyan-500 hover:bg-cyan-600 font-semibold">
           { buttonText }
         </button>
     )
