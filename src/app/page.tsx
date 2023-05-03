@@ -7,9 +7,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main>
-      <div className="description">
-        <h1>Easy Quotation</h1>
-        <h2>資料内の「」を『』に変換するツールです。</h2>
+      <div className="flex flex-col items-center space-y-4 m-6">
+        <h1 className="text-4xl font-bold">Easy Quotation</h1>
+        <h2 className="text-lg">資料内の「」を『』に変換するツールです。</h2>
       </div>
 
       <Process />
