@@ -1,8 +1,8 @@
 "use client";
-import { useState } from 'react';
-import TextareaAutosize, {
-  TextareaAutosizeProps,
-} from 'react-textarea-autosize';
+import { useState } from 'react'
+import { Input } from './input'
+import { Output } from './output'
+import { CopyButton } from './copy'
 
 
 function replaceBrackets(str: string) {
@@ -19,59 +19,6 @@ function copyTextToClipboard(text: string) {
   }, function(err) {
     console.error('Async: Could not copy text: ', err);
   });
-}
-
-
-type InputProps = {
-    handleInputChange: (value: string) => void,
-} & TextareaAutosizeProps;
-
-
-function Input({ value, handleInputChange }: InputProps) {
-    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        handleInputChange(event.target.value);
-    }
-
-    return (
-        <TextareaAutosize
-          value={value}
-          onChange={handleChange}
-          className="text-black"
-          placeholder="変換したい文字列を入力..."
-          minRows={5}
-        />
-    )
-
-}
-
-
-function Output({ value }: TextareaAutosizeProps) {
-    return (
-        <TextareaAutosize
-          value={value}
-          className="text-black"
-          placeholder="変換後の文字列"
-          readOnly={true}
-          minRows={5}
-        />
-    )
-}
-
-
-type copyProps = {
-    handler: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    buttonText: string;
-};
-
-
-function CopyButton({ handler, buttonText }: copyProps) {
-    return (
-        <button
-          onClick={handler}
-          className="rounded-full p-3 bg-cyan-500 hover:bg-cyan-600 font-semibold">
-          { buttonText }
-        </button>
-    )
 }
 
 
