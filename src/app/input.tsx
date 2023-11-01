@@ -17,7 +17,7 @@ export function Input({ value, handleInputChange }: InputProps) {
         <TextareaAutosize
           value={value}
           onChange={handleChange}
-          className="text-black"
+          className="text-black w-2/6"
           placeholder="変換したい文字列を入力..."
           minRows={5}
         />
